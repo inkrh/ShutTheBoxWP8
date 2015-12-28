@@ -1,0 +1,102 @@
+﻿<phone:PhoneApplicationPage x:Class="ShutTheBox.About"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+                            xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+                            FontFamily="{StaticResource PhoneFontFamilyNormal}"
+                            FontSize="{StaticResource PhoneFontSizeNormal}"
+                            Foreground="{StaticResource PhoneForegroundBrush}"
+                            Orientation="Portrait"
+                            SupportedOrientations="Portrait"
+                            shell:SystemTray.IsVisible="True"
+                            mc:Ignorable="d">
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                <GradientStop Offset="1" Color="Black" />
+                <GradientStop Color="{StaticResource PhoneAccentColor}" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+
+        <Grid x:Name="ContentPanel"
+              Grid.Row="1"
+              Margin="12,0,12,0">
+            <!--
+                <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="1"/>
+                <GradientStop Color="#FF0B42FF"/>
+                </LinearGradientBrush>
+                </Grid.Background>
+            -->
+            <Grid Width="320"
+                  Height="600"
+                  Margin="68,80,68,0"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Top">
+                <ScrollViewer Width="320" Height="600" Margin="0,0,0,0" >
+                    <RichTextBox Width="296"
+                		Height="600"
+                		HorizontalAlignment="Left"
+                		VerticalAlignment="Top"
+                		FontSize="16"
+                		TextWrapping="Wrap">
+                        <Paragraph>
+                            <Run Text="Shut The Box has been played for centuries (even longer than Microsoft has been around), with hundreds of variations to the rules and scoring."/>
+                            <LineBreak/>
+                            <LineBreak/>
+                            <Run Text="It has been a pub game, a group game, a gambling game, and a solo game, using multiple dice or just one die."/>
+                            <LineBreak/>
+                            <LineBreak/>
+                            <Run Text="This particular variation of Shut The Box is designed as a solo coffee break game, always using two dice, with the scoring adjusted to give better scores the more boxes which are closed."/>
+                            <LineBreak/>
+                            <LineBreak/>
+                            <Run Text="The design intent of this version is to mimic the old-style simplicity of a simple but fun game, which at its core is playable with a dice and a piece of paper."/>
+                            <LineBreak/>
+                            <LineBreak/>
+                            <Run Text="For support or other questions please contact me at "/>
+                            <Hyperlink Click="Hyperlink_OnClick">
+                                <Run Text="robert@inkrh.com."/>
+                            </Hyperlink>
+                            <Run Text=" "/>
+                        </Paragraph>
+
+                    </RichTextBox>
+                </ScrollViewer>
+
+                <TextBlock Width="296"
+                           Height="40"
+                           Margin="12,0,0,0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           FontSize="24"
+                           FontWeight="Bold"
+                           RenderTransformOrigin="0.248,0.375"
+                           Text="Shut The Box"
+                           TextAlignment="Center"
+                           TextWrapping="Wrap" />
+            </Grid>
+            <TextBlock Width="320"
+                       Height="35"
+                       Margin="10,720,0,0"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Top"
+                       FontSize="13.333"
+                       Text="Shut The Box v1.6 (c) RH Ink"
+                       TextWrapping="Wrap" />
+
+
+        </Grid>
+
+    </Grid>
+
+
+</phone:PhoneApplicationPage>

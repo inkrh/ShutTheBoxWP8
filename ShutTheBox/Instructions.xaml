@@ -1,0 +1,94 @@
+﻿<phone:PhoneApplicationPage x:Class="ShutTheBox.Instructions"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+                            xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+                            FontFamily="{StaticResource PhoneFontFamilyNormal}"
+                            FontSize="{StaticResource PhoneFontSizeNormal}"
+                            Foreground="{StaticResource PhoneForegroundBrush}"
+                            Orientation="Portrait"
+                            SupportedOrientations="Portrait"
+                            shell:SystemTray.IsVisible="True"
+                            mc:Ignorable="d">
+
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                <GradientStop Offset="1" Color="Black" />
+                <GradientStop Color="{StaticResource PhoneAccentColor}" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+
+        <Grid x:Name="ContentPanel"
+              Grid.Row="1"
+              Margin="12,0,12,0">
+            <!--
+                <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="1"/>
+                <GradientStop Color="#FF0B42FF"/>
+                </LinearGradientBrush>
+                </Grid.Background>
+            -->
+            <Grid Width="320"
+                  Height="558"
+                  Margin="68,80,68,0"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Top">
+                <TextBlock Width="296"
+                           Height="493"
+                           Margin="12,55,0,0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           FontSize="16"
+                           TextWrapping="Wrap">
+                    <Run Text="Roll the dice" />
+                    <LineBreak />
+                    <Run />
+                    <LineBreak />
+                    <Run Text="Tap any open boxes that add up to the dice total - for example if you roll 6, the possible moves are 6; 1+5; 2+3+1; or 2+4." />
+                    <LineBreak />
+                    <Run />
+                    <LineBreak />
+                    <Run Text="If a box is already closed then it can't be used." />
+                    <LineBreak />
+                    <Run />
+                    <LineBreak />
+                    <Run Text="Game play continues while there are still possible open boxes less than the dice total." />
+                    <LineBreak />
+                    <Run />
+                    <LineBreak />
+                    <Run Text="Scoring is weighted so that the more boxes which are open, the higher the score." />
+                    <LineBreak />
+                    <Run />
+                    <LineBreak />
+                    <Run Text="The aim of the game is to get as low a score as possible." />
+                </TextBlock>
+                <TextBlock Width="296"
+                           Height="40"
+                           Margin="12,0,0,0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           FontSize="24"
+                           FontWeight="Bold"
+                           RenderTransformOrigin="0.248,0.375"
+                           Text="Shut The Box"
+                           TextAlignment="Center"
+                           TextWrapping="Wrap" />
+            </Grid>
+
+
+        </Grid>
+
+    </Grid>
+
+
+</phone:PhoneApplicationPage>

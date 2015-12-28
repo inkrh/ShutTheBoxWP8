@@ -1,0 +1,105 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="ShutTheBox.HighScores"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:UI="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsMenuEnabled="False"
+                              IsVisible="True"
+                              Mode="Minimized"
+                              Opacity="0.5">
+            <shell:ApplicationBarIconButton Click="About_Click"
+                                            IconUri="/Assets/AppBar/info.png"
+                                            Text="About" />
+            <shell:ApplicationBarIconButton Click="Instructions_Click"
+                                            IconUri="/Assets/AppBar/queryIcon.png"
+                                            Text="Instructions" />
+
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                <GradientStop Offset="1" Color="Black" />
+                <GradientStop Color="{StaticResource PhoneAccentColor}" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+
+        <Grid x:Name="ContentPanel"
+              Grid.Row="1"
+              Margin="12,0,12,0">
+
+            <Grid Width="360"
+                  Height="440"
+                  Margin="12,80,12,0"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Top">
+                <TextBlock Text="Recent Scores" FontSize="16" Margin="12,32,0,0" />
+                
+                <ListBox x:Name="lB" Margin="12,68,10,0">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock TextWrapping="Wrap" Text="{Binding}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+
+                </ListBox>
+                
+                <TextBlock Width="296"
+                           Height="40"
+                           Margin="12,0,0,0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           FontSize="24"
+                           FontWeight="Bold"
+                           RenderTransformOrigin="0.248,0.375"
+                           Text="Shut The Box"
+                           TextAlignment="Center"
+                           TextWrapping="Wrap" />
+            </Grid>
+            
+            <Button x:Name="Reset"
+                        Width="80"
+                        Height="80"
+                        Margin="188,544,188,144"
+                        Click="Reset_Click"
+                        Content="Clear"
+                        Style="{StaticResource ButtonStyle1}"
+                        Visibility="Visible" />
+
+
+            <UI:AdControl Width="480"
+                          Height="80"
+                          Margin="-12,646,-12,-30"
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Top"
+                          AdUnitId="161337"
+                          ApplicationId="3af77fe0-5f7d-4a92-b781-d7af49ff9fb4"
+                          IsAutoRefreshEnabled="True" />
+
+
+
+
+        </Grid>
+
+    </Grid>
+
+</phone:PhoneApplicationPage>

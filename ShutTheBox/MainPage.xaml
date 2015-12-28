@@ -1,0 +1,194 @@
+﻿<phone:PhoneApplicationPage x:Class="ShutTheBox.MainPage"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:UI="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+                            xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+                            FontFamily="{StaticResource PhoneFontFamilyNormal}"
+                            FontSize="{StaticResource PhoneFontSizeNormal}"
+                            Foreground="{StaticResource PhoneForegroundBrush}"
+                            Orientation="Portrait"
+                            SupportedOrientations="Portrait"
+                            shell:SystemTray.IsVisible="True"
+                            mc:Ignorable="d">
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsMenuEnabled="False"
+                              IsVisible="True"
+                              Mode="Minimized"
+                              Opacity="0.5">
+            <shell:ApplicationBarIconButton Click="About_Click"
+                                            IconUri="/Assets/AppBar/info.png"
+                                            Text="About" />
+            <shell:ApplicationBarIconButton Click="Instructions_Click"
+                                            IconUri="/Assets/AppBar/queryIcon.png"
+                                            Text="Instructions" />
+            <shell:ApplicationBarIconButton Click="Scores_Click"
+                                            IconUri="/Assets/AppBar/scoresIcon.png"
+                                            Text="Scores" />
+
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                <GradientStop Offset="1" Color="Black" />
+                <GradientStop Color="{StaticResource PhoneAccentColor}" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+
+        <Grid x:Name="ContentPanel"
+              Grid.Row="1"
+              Margin="12,0,12,0">
+            <!--
+                <Grid.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                <GradientStop Offset="1" Color="Black" />
+                <GradientStop Color="{StaticResource PhoneAccentColor}" />
+                </LinearGradientBrush>
+                </Grid.Background>
+            -->
+            <Grid Width="320"
+                  Height="395"
+                  Margin="68,80,68,0"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Top">
+                <Button x:Name="_1"
+                        Width="80"
+                        Height="80"
+                        Margin="12,0,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Click="FlapClick"
+                        Content="1"
+                        Style="{StaticResource ButtonStyle1}" />
+                <Button x:Name="_2"
+                        Width="80"
+                        Height="80"
+                        Margin="119,0,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Click="FlapClick"
+                        Content="2"
+                        Style="{StaticResource ButtonStyle1}" />
+                <Button x:Name="_3"
+                        Height="80"
+                        Margin="228,0,12,0"
+                        VerticalAlignment="Top"
+                        Click="FlapClick"
+                        Content="3"
+                        Style="{StaticResource ButtonStyle1}" />
+                <Button x:Name="_6"
+                        Height="80"
+                        Margin="228,92,12,0"
+                        VerticalAlignment="Top"
+                        Click="FlapClick"
+                        Content="6"
+                        Style="{StaticResource ButtonStyle1}" />
+                <Button x:Name="_5"
+                        Width="80"
+                        Height="80"
+                        Margin="119,92,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Click="FlapClick"
+                        Content="5"
+                        Style="{StaticResource ButtonStyle1}" />
+                <Button x:Name="_4"
+                        Width="80"
+                        Height="80"
+                        Margin="12,92,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Click="FlapClick"
+                        Content="4"
+                        Style="{StaticResource ButtonStyle1}" />
+                <Button x:Name="_7"
+                        Width="80"
+                        Height="80"
+                        Margin="12,184,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Click="FlapClick"
+                        Content="7"
+                        Style="{StaticResource ButtonStyle1}" />
+                <Button x:Name="_8"
+                        Width="80"
+                        Height="80"
+                        Margin="119,184,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Click="FlapClick"
+                        Content="8"
+                        Style="{StaticResource ButtonStyle1}" />
+                <Button x:Name="_9"
+                        Height="80"
+                        Margin="228,184,12,0"
+                        VerticalAlignment="Top"
+                        Click="FlapClick"
+                        Content="9"
+                        Style="{StaticResource ButtonStyle1}" />
+                <Button x:Name="Die1"
+                        Width="80"
+                        Height="80"
+                        Margin="50,312,190,3"
+                        Click="RollMe"
+                        Content="Roll"
+                        Style="{StaticResource ButtonStyle1}" />
+                <Button x:Name="Die2"
+                        Width="80"
+                        Height="80"
+                        Margin="190,312,50,3"
+                        Click="RollMe"
+                        Content="Roll"
+                        Style="{StaticResource ButtonStyle1}" />
+                <Button x:Name="Reset"
+                        Width="80"
+                        Height="80"
+                        Margin="60,312,60,3"
+                        Click="Reset_Click"
+                        Content="Reset"
+                        Style="{StaticResource ButtonStyle1}"
+                        Visibility="Collapsed" />
+            </Grid>
+            <TextBlock x:Name="total"
+                       Height="40"
+                       Margin="68,496,68,0"
+                       VerticalAlignment="Top"
+                       Text=""
+                       TextAlignment="Center"
+                       TextWrapping="Wrap"  />
+            <TextBlock x:Name="CurrentScore"
+                       Height="82"
+                       Margin="36,542,36,0"
+                       VerticalAlignment="Top"
+                       Text=""
+                       TextAlignment="Center"
+                       TextWrapping="Wrap" TextTrimming="WordEllipsis" />
+
+            <UI:AdControl Width="480"
+                          Height="80"
+                          Margin="-12,642,-12,0"
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Top"
+                          AdUnitId="161337"
+                          ApplicationId="3af77fe0-5f7d-4a92-b781-d7af49ff9fb4"
+                          IsAutoRefreshEnabled="True" />
+
+
+
+
+        </Grid>
+
+    </Grid>
+
+</phone:PhoneApplicationPage>
